@@ -33,12 +33,14 @@ app.use(express.urlencoded({ extended: true }));
 // CORS configuration
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL 
+    ? `https://uniseat.netlify.app` 
     : 'http://localhost:5173',
   credentials: true
 }));
 
 // Routes
+
+
 app.use('/api/auth', authRoutes);
 app.use('/api/blocks', blockRoutes);
 app.use('/api/floors', floorRoutes);
@@ -55,6 +57,10 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
+
+app.get("/",(req,res)=>{
+  res.send("working");
+})
 
 // Error handler middleware (must be last)
 app.use(errorHandler);
