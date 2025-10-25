@@ -31,13 +31,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS configuration
-app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://uniseat.netlify.app'
-  ],
-  credentials: true,
-}));
+app.use(cors(
+//   {
+//   origin: [
+//     'http://localhost:5173',
+//     'https://uniseat.netlify.app'
+//   ]
+// }
+));
+
+
 
 
 // Routes
