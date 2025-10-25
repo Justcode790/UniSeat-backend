@@ -56,6 +56,12 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+
+app.get("/",(req,res)=>{
+  res.send("working");
+})
+
+
 // Error handler middleware (must be last)
 app.use(errorHandler);
 
